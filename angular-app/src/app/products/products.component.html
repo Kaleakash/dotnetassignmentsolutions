@@ -1,0 +1,11 @@
+<div>
+<h1> Product List Page </h1>
+<h2>{{ pageTitle }}</h2>
+<img *ngIf='showImage'
+[src]='imageUrl'
+[title]='productName'
+[alt]='productName'
+[style.width.px]='imageWidth'
+[style.margin.px]='imageMargin'/>
+
+</div>

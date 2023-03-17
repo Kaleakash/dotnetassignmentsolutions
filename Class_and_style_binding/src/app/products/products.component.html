@@ -1,0 +1,41 @@
+<div>
+    <h1> Product List Page </h1>
+    <table class="table">
+        <tr>
+            <th><input type="button"  value="Show Image" (click)="toggleImage()"/></th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>Rating</th>
+        </tr>
+    <tr *ngFor="let p of products">
+        <td>
+            <span *ngIf="showImage">
+            <img 
+                [src]='p.imageUrl'
+                [title]='p.productName'
+                [alt]='p.productName'
+                [style.width.px]='imageWidth'
+                [style.margin.px]='imageMargin'/>
+            </span>
+        </td>
+        <td [style.color]="'#306A9D'" [style.font-weight]="700">
+            {{ p.productName }}
+        </td>
+      
+        <td>{{p.code}}</td>
+        <td>{{p.available}}</td>
+        
+        <td [style.color]="p.price > 20 ? 'red': 'green'"           
+        [style.font-size.px]="16"  [style.font-weight]="700">
+        {{ p.price}}
+        </td>
+   
+        <td>{{p.rating}}</td>
+    </tr>
+    </table>
+    <div>
+        
+    
+    </div>
